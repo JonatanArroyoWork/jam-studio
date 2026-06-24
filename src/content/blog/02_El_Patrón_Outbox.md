@@ -40,11 +40,11 @@ reintentarse sin perder información.
 ```mermaid
 flowchart LR
     A[Servicio Gestión] -->|Transacción única| B[(Base de datos Principal)]
-    B --> C[(Tabla Outbox)]
-    C --> D[Outbox Processor  Relay]
-    D --> E[Kafka Topic\nuser-created]
-    E --> F[Orquestador Kestra / n8n]
-    F --> G[Servicio Tareas]
+    B --> C[(Tabla: Outbox)]
+    C --> D[Outbox Processor: Relay]
+    D --> E[Kafka Topic: user-created]
+    E --> F[Orquestador:  Kestra / n8n]
+    F --> G[Servicio: Tareas]
 ```
 
 > La clave del patrón es que la escritura en la tabla principal y en la outbox ocurren **en la misma
