@@ -39,11 +39,11 @@ reintentarse sin perder información.
 
 ```mermaid
 flowchart LR
-    A[Servicio Gestión] -->|Transacción única| B[(Base de datos\nPrincipal)]
-    B --> C[(Tabla\nOutbox)]
-    C --> D[Outbox Processor\n / Relay]
+    A[Servicio Gestión] -->|Transacción única| B[(Base de datos Principal)]
+    B --> C[(Tabla Outbox)]
+    C --> D[Outbox Processor  Relay]
     D --> E[Kafka Topic\nuser-created]
-    E --> F[Orquestador\nKestra / n8n]
+    E --> F[Orquestador Kestra / n8n]
     F --> G[Servicio Tareas]
 ```
 
