@@ -2,7 +2,7 @@
 title: 'Patrón Outbox'
 description: 'Explicación personal de cómo entender y utilizar el patrón Outbox'
 pubDate: 'Jun 26 2026'
-heroImage: '../../assets/blog-ph1-jam-stdio.png'
+heroImage: '../../assets/blog-ph2-outbox-pattern.png'
 ---
 
 En el proyecto en el que trabajo actualmente utilizamos con frecuencia el **Outbox Pattern**. Este artículo
