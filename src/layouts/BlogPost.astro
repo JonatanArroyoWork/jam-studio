@@ -82,5 +82,25 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 			</article>
 		</main>
 		<Footer />
+		<script type="module">
+			import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs';
+			mermaid.initialize({ startOnLoad: true, securityLevel: 'loose' });
+
+			// Convertir bloques de código markdown con lenguaje 'mermaid' en diagramas
+			document.querySelectorAll('pre[data-language="mermaid"]').forEach((pre) => {
+				// Extraer el texto del bloque de código (ignorando los spans de sintaxis)
+				const textContent = Array.from(pre.querySelectorAll('.line'))
+					.map(line => line.textContent)
+					.join('\n');
+
+				const mermaidDiv = document.createElement('div');
+				mermaidDiv.className = 'mermaid';
+				mermaidDiv.textContent = textContent;
+				pre.replaceWith(mermaidDiv);
+			});
+
+			// Renderizar todos los diagramas
+			await mermaid.contentLoaded();
+		</script>
 	</body>
 </html>
